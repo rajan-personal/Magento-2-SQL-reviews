@@ -1,4 +1,4 @@
-SET @PRODUCT_NAME= ''Death by Chocolate Cake;
+SET @PRODUCT_NAME= 'Death by Chocolate Cake';
 SET @CUSTOMER_ID = NULL;
 SET @REVIEW_TITLE = 'Yummy';
 SET @REVIEW_DETAIL = 'The best cake ever';
