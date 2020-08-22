@@ -31,10 +31,7 @@ SET @RATE_N=1;
 
 SET @STORE_ID=0;
 
-IF NOT EXITSTS(SELECT * FROM m2rating_option_vote_aggregated WHERE (rating_id = @RATE_N) AND (store_id = @STORE_ID) AND (entity_pk_value = @PRODUCT_ID))
-BEGIN
-INSERT INTO m2rating_option_vote_aggregated (rating_id, entity_pk_value, vote_count, vote_value_sum, percent, percent_approved, store_id) VALUES (@RATE_N, @PRODUCT_ID, 0, 0, 0, 0, @STORE_ID)
-END;
+INSERT INTO m2rating_option_vote_aggregated (rating_id, entity_pk_value, vote_count, vote_value_sum, percent, percent_approved, store_id) SELECT * FROM (SELECT @RATE_N AS rating_id, @PRODUCT_ID AS entity_pk_value, 0 AS vote_count, 0 AS vote_value_sum, 0 AS percent, 0 AS percent_approved, @STORE_ID AS store_id) AS T WHERE NOT EXISTS (SELECT * FROM m2rating_option_vote_aggregated WHERE (rating_id = @RATE_N) AND (store_id = @STORE_ID) AND (entity_pk_value = @PRODUCT_ID));
 
 SELECT `m2rating_option_vote_aggregated`.`primary_id` INTO @PRIMARY_ID FROM `m2rating_option_vote_aggregated` WHERE (rating_id = @RATE_N) AND (store_id = @STORE_ID) AND (entity_pk_value = @PRODUCT_ID);
 
@@ -44,10 +41,7 @@ UPDATE `m2rating_option_vote_aggregated` SET `rating_id` = @RATE_N, `entity_pk_v
 
 SET @STORE_ID=1;
 
-IF NOT EXITSTS(SELECT * FROM m2rating_option_vote_aggregated WHERE (rating_id = @RATE_N) AND (store_id = @STORE_ID) AND (entity_pk_value = @PRODUCT_ID))
-BEGIN
-INSERT INTO m2rating_option_vote_aggregated (rating_id, entity_pk_value, vote_count, vote_value_sum, percent, percent_approved, store_id) VALUES (@RATE_N, @PRODUCT_ID, 0, 0, 0, 0, @STORE_ID)
-END;
+INSERT INTO m2rating_option_vote_aggregated (rating_id, entity_pk_value, vote_count, vote_value_sum, percent, percent_approved, store_id) SELECT * FROM (SELECT @RATE_N AS rating_id, @PRODUCT_ID AS entity_pk_value, 0 AS vote_count, 0 AS vote_value_sum, 0 AS percent, 0 AS percent_approved, @STORE_ID AS store_id) AS T WHERE NOT EXISTS (SELECT * FROM m2rating_option_vote_aggregated WHERE (rating_id = @RATE_N) AND (store_id = @STORE_ID) AND (entity_pk_value = @PRODUCT_ID));
 
 SELECT `m2rating_option_vote_aggregated`.`primary_id` INTO @PRIMARY_ID FROM `m2rating_option_vote_aggregated` WHERE (rating_id = @RATE_N) AND (store_id = @STORE_ID) AND (entity_pk_value = @PRODUCT_ID);
 
@@ -57,10 +51,7 @@ UPDATE `m2rating_option_vote_aggregated` SET `rating_id` = @RATE_N, `entity_pk_v
 
 SET @STORE_ID=2;
 
-IF NOT EXITSTS(SELECT * FROM m2rating_option_vote_aggregated WHERE (rating_id = @RATE_N) AND (store_id = @STORE_ID) AND (entity_pk_value = @PRODUCT_ID))
-BEGIN
-INSERT INTO m2rating_option_vote_aggregated (rating_id, entity_pk_value, vote_count, vote_value_sum, percent, percent_approved, store_id) VALUES (@RATE_N, @PRODUCT_ID, 0, 0, 0, 0, @STORE_ID)
-END;
+INSERT INTO m2rating_option_vote_aggregated (rating_id, entity_pk_value, vote_count, vote_value_sum, percent, percent_approved, store_id) SELECT * FROM (SELECT @RATE_N AS rating_id, @PRODUCT_ID AS entity_pk_value, 0 AS vote_count, 0 AS vote_value_sum, 0 AS percent, 0 AS percent_approved, @STORE_ID AS store_id) AS T WHERE NOT EXISTS (SELECT * FROM m2rating_option_vote_aggregated WHERE (rating_id = @RATE_N) AND (store_id = @STORE_ID) AND (entity_pk_value = @PRODUCT_ID));
 
 SELECT `m2rating_option_vote_aggregated`.`primary_id` INTO @PRIMARY_ID FROM `m2rating_option_vote_aggregated` WHERE (rating_id = @RATE_N) AND (store_id = @STORE_ID) AND (entity_pk_value = @PRODUCT_ID);
 
@@ -74,10 +65,7 @@ SET @RATE_N=2;
 
 SET @STORE_ID=0;
 
-IF NOT EXITSTS(SELECT * FROM m2rating_option_vote_aggregated WHERE (rating_id = @RATE_N) AND (store_id = @STORE_ID) AND (entity_pk_value = @PRODUCT_ID))
-BEGIN
-INSERT INTO m2rating_option_vote_aggregated (rating_id, entity_pk_value, vote_count, vote_value_sum, percent, percent_approved, store_id) VALUES (@RATE_N, @PRODUCT_ID, 0, 0, 0, 0, @STORE_ID)
-END;
+INSERT INTO m2rating_option_vote_aggregated (rating_id, entity_pk_value, vote_count, vote_value_sum, percent, percent_approved, store_id) SELECT * FROM (SELECT @RATE_N AS rating_id, @PRODUCT_ID AS entity_pk_value, 0 AS vote_count, 0 AS vote_value_sum, 0 AS percent, 0 AS percent_approved, @STORE_ID AS store_id) AS T WHERE NOT EXISTS (SELECT * FROM m2rating_option_vote_aggregated WHERE (rating_id = @RATE_N) AND (store_id = @STORE_ID) AND (entity_pk_value = @PRODUCT_ID));
 
 SELECT `m2rating_option_vote_aggregated`.`primary_id` INTO @PRIMARY_ID FROM `m2rating_option_vote_aggregated` WHERE (rating_id = @RATE_N) AND (store_id = @STORE_ID) AND (entity_pk_value = @PRODUCT_ID);
 
@@ -87,10 +75,7 @@ UPDATE `m2rating_option_vote_aggregated` SET `rating_id` = @RATE_N, `entity_pk_v
 
 SET @STORE_ID=1;
 
-IF NOT EXITSTS(SELECT * FROM m2rating_option_vote_aggregated WHERE (rating_id = @RATE_N) AND (store_id = @STORE_ID) AND (entity_pk_value = @PRODUCT_ID))
-BEGIN
-INSERT INTO m2rating_option_vote_aggregated (rating_id, entity_pk_value, vote_count, vote_value_sum, percent, percent_approved, store_id) VALUES (@RATE_N, @PRODUCT_ID, 0, 0, 0, 0, @STORE_ID)
-END;
+INSERT INTO m2rating_option_vote_aggregated (rating_id, entity_pk_value, vote_count, vote_value_sum, percent, percent_approved, store_id) SELECT * FROM (SELECT @RATE_N AS rating_id, @PRODUCT_ID AS entity_pk_value, 0 AS vote_count, 0 AS vote_value_sum, 0 AS percent, 0 AS percent_approved, @STORE_ID AS store_id) AS T WHERE NOT EXISTS (SELECT * FROM m2rating_option_vote_aggregated WHERE (rating_id = @RATE_N) AND (store_id = @STORE_ID) AND (entity_pk_value = @PRODUCT_ID));
 
 SELECT `m2rating_option_vote_aggregated`.`primary_id` INTO @PRIMARY_ID FROM `m2rating_option_vote_aggregated` WHERE (rating_id = @RATE_N) AND (store_id = @STORE_ID) AND (entity_pk_value = @PRODUCT_ID);
 
@@ -100,10 +85,7 @@ UPDATE `m2rating_option_vote_aggregated` SET `rating_id` = @RATE_N, `entity_pk_v
 
 SET @STORE_ID=2;
 
-IF NOT EXITSTS(SELECT * FROM m2rating_option_vote_aggregated WHERE (rating_id = @RATE_N) AND (store_id = @STORE_ID) AND (entity_pk_value = @PRODUCT_ID))
-BEGIN
-INSERT INTO m2rating_option_vote_aggregated (rating_id, entity_pk_value, vote_count, vote_value_sum, percent, percent_approved, store_id) VALUES (@RATE_N, @PRODUCT_ID, 0, 0, 0, 0, @STORE_ID)
-END;
+INSERT INTO m2rating_option_vote_aggregated (rating_id, entity_pk_value, vote_count, vote_value_sum, percent, percent_approved, store_id) SELECT * FROM (SELECT @RATE_N AS rating_id, @PRODUCT_ID AS entity_pk_value, 0 AS vote_count, 0 AS vote_value_sum, 0 AS percent, 0 AS percent_approved, @STORE_ID AS store_id) AS T WHERE NOT EXISTS (SELECT * FROM m2rating_option_vote_aggregated WHERE (rating_id = @RATE_N) AND (store_id = @STORE_ID) AND (entity_pk_value = @PRODUCT_ID));
 
 SELECT `m2rating_option_vote_aggregated`.`primary_id` INTO @PRIMARY_ID FROM `m2rating_option_vote_aggregated` WHERE (rating_id = @RATE_N) AND (store_id = @STORE_ID) AND (entity_pk_value = @PRODUCT_ID);
 
@@ -125,10 +107,7 @@ SELECT (SUM(rating_vote.`percent`)) / COUNT(*) into @PERCENTAGE FROM `m2rating_o
 
  SELECT COUNT(*) INTO @COUNT FROM `m2review` WHERE (m2review.entity_pk_value = @PRODUCT_ID) AND (m2review.status_id = 1);
 
-IF NOT EXITSTS(SELECT * FROM m2review_entity_summary WHERE (entity_pk_value=@PRODUCT_ID) AND (entity_type=1) AND (store_id=@STORE_ID))
-BEGIN
-INSERT INTO m2review_entity_summary (entity_pk_value, entity_type, reviews_count, rating_summary, store_id) VALUES  (@PRODUCT_ID, 1, 0, 0, @STORE_ID)
-END;
+ INSERT INTO m2review_entity_summary (entity_pk_value, entity_type, reviews_count, rating_summary, store_id) SELECT * FROM  (SELECT @PRODUCT_ID AS entity_pk_value, 1 AS entity_type, 0 AS reviews_count, 0 AS rating_summary, @STORE_ID AS store_id) AS T  WHERE NOT EXISTS (SELECT * FROM m2review_entity_summary WHERE (entity_pk_value=@PRODUCT_ID) AND (entity_type=1) AND (store_id=@STORE_ID));
 
  SELECT `m2review_entity_summary`.primary_id into @PRIMARY FROM `m2review_entity_summary` WHERE (entity_pk_value = @PRODUCT_ID) AND (entity_type = 1) AND (store_id = 0);
 
@@ -147,10 +126,7 @@ SELECT ((SUM(rating_vote.`percent`)) / (COUNT(*))) into @PERCENTAGE FROM `m2rati
 SELECT COUNT(*) INTO @COUNT FROM `m2review`
  INNER JOIN `m2review_store` AS `store` ON m2review.review_id=store.review_id AND store.store_id = @STORE_ID WHERE (m2review.entity_pk_value = @PRODUCT_ID) AND (m2review.status_id = 1);
 
-IF NOT EXITSTS(SELECT * FROM m2review_entity_summary WHERE (entity_pk_value=@PRODUCT_ID) AND (entity_type=1) AND (store_id=@STORE_ID))
-BEGIN
-INSERT INTO m2review_entity_summary (entity_pk_value, entity_type, reviews_count, rating_summary, store_id) VALUES (@PRODUCT_ID, 1, 0, 0, @STORE_ID)
-END;
+ INSERT INTO m2review_entity_summary (entity_pk_value, entity_type, reviews_count, rating_summary, store_id) SELECT * FROM  (SELECT @PRODUCT_ID AS entity_pk_value, 1 AS entity_type, 0 AS reviews_count, 0 AS rating_summary, @STORE_ID AS store_id) AS T  WHERE NOT EXISTS (SELECT * FROM m2review_entity_summary WHERE (entity_pk_value=@PRODUCT_ID) AND (entity_type=1) AND (store_id=@STORE_ID));
 
  SELECT `m2review_entity_summary`.primary_id into @PRIMARY FROM `m2review_entity_summary` WHERE (entity_pk_value = @PRODUCT_ID) AND (entity_type = 1) AND (store_id = @STORE_ID);
 
@@ -168,10 +144,7 @@ SELECT (SUM(rating_vote.`percent`)) / COUNT(*) into @PERCENTAGE FROM `m2rating_o
 SELECT COUNT(*) INTO @COUNT FROM `m2review`
  INNER JOIN `m2review_store` AS `store` ON m2review.review_id=store.review_id AND store.store_id = @STORE_ID WHERE (m2review.entity_pk_value = @PRODUCT_ID) AND (m2review.status_id = 1);
 
-IF NOT EXITSTS(SELECT * FROM m2review_entity_summary WHERE (entity_pk_value=@PRODUCT_ID) AND (entity_type=1) AND (store_id=@STORE_ID))
-BEGIN
-INSERT INTO m2review_entity_summary (entity_pk_value, entity_type, reviews_count, rating_summary, store_id) VALUES (@PRODUCT_ID, 1, 0, 0, @STORE_ID)
-END;
+ INSERT INTO m2review_entity_summary (entity_pk_value, entity_type, reviews_count, rating_summary, store_id) SELECT * FROM  (SELECT @PRODUCT_ID AS entity_pk_value, 1 AS entity_type, 0 AS reviews_count, 0 AS rating_summary, @STORE_ID AS store_id) AS T  WHERE NOT EXISTS (SELECT * FROM m2review_entity_summary WHERE (entity_pk_value=@PRODUCT_ID) AND (entity_type=1) AND (store_id=@STORE_ID));
 
  SELECT `m2review_entity_summary`.primary_id into @PRIMARY FROM `m2review_entity_summary` WHERE (entity_pk_value = @PRODUCT_ID) AND (entity_type = 1) AND (store_id = @STORE_ID);
 
