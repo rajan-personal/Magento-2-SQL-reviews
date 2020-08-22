@@ -1,11 +1,11 @@
-SET @PRODUCT_NAME= '';
+SET @PRODUCT_NAME= ''Death by Chocolate Cake;
 SET @CUSTOMER_ID = NULL;
 SET @REVIEW_TITLE = 'Yummy';
 SET @REVIEW_DETAIL = 'The best cake ever';
 SET @REVIEW_RATING1 = 5; -- Between 1 to 5
 SET @REVIEW_RATING2 = 5; -- Between 1 to 5
 SET @REVIEW_NICKNAME = 'Rajan';
-SET @REVIEW_CREATED_AT  = '2019-07-15'; -- OR date in YY-mm-dd HH:ii:ss format
+SET @REVIEW_CREATED_AT  = '2019-07-15 00:00:00'; -- OR date in YY-mm-dd HH:ii:ss format
 
 SELECT entity_id INTO @PRODUCT_ID FROM m2catalog_product_entity_varchar WHERE attribute_id=71 AND value=@PRODUCT_NAME;
 
