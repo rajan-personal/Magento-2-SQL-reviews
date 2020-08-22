@@ -125,7 +125,7 @@ SELECT (SUM(rating_vote.`percent`)) / COUNT(*) into @PERCENTAGE FROM `m2rating_o
 
 IF NOT EXITSTS(SELECT * FROM m2review_entity_summary WHERE (entity_pk_value=@PRODUCT_ID) AND (entity_type=1) AND (store_id=@STORE_ID))
 BEGIN
-INSERT INTO m2review_entity_summary (entity_pk_value, entity_type, reviews_count, rating_summary, store_id) VALUES (@PRODUCT_ID , @PRODUCT_ID, 1, 0, 0, @STORE_ID)
+INSERT INTO m2review_entity_summary (entity_pk_value, entity_type, reviews_count, rating_summary, store_id) VALUES  (@PRODUCT_ID, 1, 0, 0, @STORE_ID)
 END;
 
  SELECT `m2review_entity_summary`.primary_id into @PRIMARY FROM `m2review_entity_summary` WHERE (entity_pk_value = @PRODUCT_ID) AND (entity_type = 1) AND (store_id = 0);
@@ -147,7 +147,7 @@ SELECT COUNT(*) INTO @COUNT FROM `m2review`
 
 IF NOT EXITSTS(SELECT * FROM m2review_entity_summary WHERE (entity_pk_value=@PRODUCT_ID) AND (entity_type=1) AND (store_id=@STORE_ID))
 BEGIN
-INSERT INTO m2review_entity_summary (entity_pk_value, entity_type, reviews_count, rating_summary, store_id) VALUES (@PRODUCT_ID , @PRODUCT_ID, 1, 0, 0, @STORE_ID)
+INSERT INTO m2review_entity_summary (entity_pk_value, entity_type, reviews_count, rating_summary, store_id) VALUES (@PRODUCT_ID, 1, 0, 0, @STORE_ID)
 END;
 
  SELECT `m2review_entity_summary`.primary_id into @PRIMARY FROM `m2review_entity_summary` WHERE (entity_pk_value = @PRODUCT_ID) AND (entity_type = 1) AND (store_id = @STORE_ID);
@@ -168,7 +168,7 @@ SELECT COUNT(*) INTO @COUNT FROM `m2review`
 
 IF NOT EXITSTS(SELECT * FROM m2review_entity_summary WHERE (entity_pk_value=@PRODUCT_ID) AND (entity_type=1) AND (store_id=@STORE_ID))
 BEGIN
-INSERT INTO m2review_entity_summary (entity_pk_value, entity_type, reviews_count, rating_summary, store_id) VALUES (@PRODUCT_ID , @PRODUCT_ID, 1, 0, 0, @STORE_ID)
+INSERT INTO m2review_entity_summary (entity_pk_value, entity_type, reviews_count, rating_summary, store_id) VALUES (@PRODUCT_ID, 1, 0, 0, @STORE_ID)
 END;
 
  SELECT `m2review_entity_summary`.primary_id into @PRIMARY FROM `m2review_entity_summary` WHERE (entity_pk_value = @PRODUCT_ID) AND (entity_type = 1) AND (store_id = @STORE_ID);
