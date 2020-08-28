@@ -45,7 +45,7 @@ SELECT `m2rating_option_vote_aggregated`.`primary_id` INTO @PRIMARY_ID FROM `m2r
 
 SELECT COUNT(vote.vote_id), SUM(vote.value), COUNT(IF(review.status_id=1, vote.vote_id, NULL)), SUM(IF(review.status_id=1, vote.value, 0)) INTO @VC, @VS, @VCA, @VSA FROM `m2rating_option_vote` AS `vote`  INNER JOIN `m2review` AS `review` ON vote.review_id=review.review_id  LEFT JOIN `m2review_store` AS `store` ON vote.review_id=store.review_id  INNER JOIN `m2rating_store` AS `rstore` ON vote.rating_id=rstore.rating_id AND rstore.store_id=store.store_id WHERE (vote.rating_id = @RATE_N) AND (store.store_id=@STORE_ID) AND (vote.entity_pk_value = @PRODUCT_ID) GROUP BY `vote`.`rating_id`,   `vote`.`entity_pk_value`,   `store`.`store_id`;
 
-UPDATE `m2rating_option_vote_aggregated` SET `rating_id` = @RATE_N, `entity_pk_value` = @PRODUCT_ID, `vote_count` = @VC, `vote_value_sum` = @VS, `percent` = @VS*20/@VC, `percent_approved` = @VSA*20/@VCA, `store_id` = @STORE_ID WHERE (primary_id = '@PRIMARY_ID');
+UPDATE `m2rating_option_vote_aggregated` SET `rating_id` = @RATE_N, `entity_pk_value` = @PRODUCT_ID, `vote_count` = @VC, `vote_value_sum` = @VS, `percent` = @VS*20/@VC, `percent_approved` = @VSA*20/@VCA, `store_id` = @STORE_ID WHERE (primary_id = @PRIMARY_ID);
 
 SET @STORE_ID=1;
 
@@ -55,7 +55,7 @@ SELECT `m2rating_option_vote_aggregated`.`primary_id` INTO @PRIMARY_ID FROM `m2r
 
 SELECT COUNT(vote.vote_id), SUM(vote.value), COUNT(IF(review.status_id=1, vote.vote_id, NULL)), SUM(IF(review.status_id=1, vote.value, 0)) INTO @VC, @VS, @VCA, @VSA FROM `m2rating_option_vote` AS `vote`  INNER JOIN `m2review` AS `review` ON vote.review_id=review.review_id  LEFT JOIN `m2review_store` AS `store` ON vote.review_id=store.review_id  INNER JOIN `m2rating_store` AS `rstore` ON vote.rating_id=rstore.rating_id AND rstore.store_id=store.store_id WHERE (vote.rating_id = @RATE_N) AND (store.store_id=@STORE_ID) AND (vote.entity_pk_value = @PRODUCT_ID) GROUP BY `vote`.`rating_id`,   `vote`.`entity_pk_value`,   `store`.`store_id`;
 
-UPDATE `m2rating_option_vote_aggregated` SET `rating_id` = @RATE_N, `entity_pk_value` = @PRODUCT_ID, `vote_count` = @VC, `vote_value_sum` = @VS, `percent` = @VS*20/@VC, `percent_approved` = @VSA*20/@VCA, `store_id` = @STORE_ID WHERE (primary_id = '@PRIMARY_ID');
+UPDATE `m2rating_option_vote_aggregated` SET `rating_id` = @RATE_N, `entity_pk_value` = @PRODUCT_ID, `vote_count` = @VC, `vote_value_sum` = @VS, `percent` = @VS*20/@VC, `percent_approved` = @VSA*20/@VCA, `store_id` = @STORE_ID WHERE (primary_id = @PRIMARY_ID);
 
 SET @STORE_ID=2;
 
@@ -65,7 +65,7 @@ SELECT `m2rating_option_vote_aggregated`.`primary_id` INTO @PRIMARY_ID FROM `m2r
 
 SELECT COUNT(vote.vote_id), SUM(vote.value), COUNT(IF(review.status_id=1, vote.vote_id, NULL)), SUM(IF(review.status_id=1, vote.value, 0)) INTO @VC, @VS, @VCA, @VSA FROM `m2rating_option_vote` AS `vote`  INNER JOIN `m2review` AS `review` ON vote.review_id=review.review_id  LEFT JOIN `m2review_store` AS `store` ON vote.review_id=store.review_id  INNER JOIN `m2rating_store` AS `rstore` ON vote.rating_id=rstore.rating_id AND rstore.store_id=store.store_id WHERE (vote.rating_id = @RATE_N) AND (store.store_id=@STORE_ID) AND (vote.entity_pk_value = @PRODUCT_ID) GROUP BY `vote`.`rating_id`,   `vote`.`entity_pk_value`,   `store`.`store_id`;
 
-UPDATE `m2rating_option_vote_aggregated` SET `rating_id` = @RATE_N, `entity_pk_value` = @PRODUCT_ID, `vote_count` = @VC, `vote_value_sum` = @VS, `percent` = @VS*20/@VC, `percent_approved` = @VSA*20/@VCA, `store_id` = @STORE_ID WHERE (primary_id = '@PRIMARY_ID');
+UPDATE `m2rating_option_vote_aggregated` SET `rating_id` = @RATE_N, `entity_pk_value` = @PRODUCT_ID, `vote_count` = @VC, `vote_value_sum` = @VS, `percent` = @VS*20/@VC, `percent_approved` = @VSA*20/@VCA, `store_id` = @STORE_ID WHERE (primary_id = @PRIMARY_ID);
 
 
 SET @RATE_N=2;
@@ -78,7 +78,7 @@ SELECT `m2rating_option_vote_aggregated`.`primary_id` INTO @PRIMARY_ID FROM `m2r
 
 SELECT COUNT(vote.vote_id), SUM(vote.value), COUNT(IF(review.status_id=1, vote.vote_id, NULL)), SUM(IF(review.status_id=1, vote.value, 0)) INTO @VC, @VS, @VCA, @VSA FROM `m2rating_option_vote` AS `vote`  INNER JOIN `m2review` AS `review` ON vote.review_id=review.review_id  LEFT JOIN `m2review_store` AS `store` ON vote.review_id=store.review_id  INNER JOIN `m2rating_store` AS `rstore` ON vote.rating_id=rstore.rating_id AND rstore.store_id=store.store_id WHERE (vote.rating_id = @RATE_N) AND (store.store_id=@STORE_ID) AND (vote.entity_pk_value = @PRODUCT_ID) GROUP BY `vote`.`rating_id`,   `vote`.`entity_pk_value`,   `store`.`store_id`;
 
-UPDATE `m2rating_option_vote_aggregated` SET `rating_id` = @RATE_N, `entity_pk_value` = @PRODUCT_ID, `vote_count` = @VC, `vote_value_sum` = @VS, `percent` = @VS*20/@VC, `percent_approved` = @VSA*20/@VCA, `store_id` = @STORE_ID WHERE (primary_id = '@PRIMARY_ID');
+UPDATE `m2rating_option_vote_aggregated` SET `rating_id` = @RATE_N, `entity_pk_value` = @PRODUCT_ID, `vote_count` = @VC, `vote_value_sum` = @VS, `percent` = @VS*20/@VC, `percent_approved` = @VSA*20/@VCA, `store_id` = @STORE_ID WHERE (primary_id = @PRIMARY_ID);
 
 SET @STORE_ID=1;
 
@@ -88,7 +88,7 @@ SELECT `m2rating_option_vote_aggregated`.`primary_id` INTO @PRIMARY_ID FROM `m2r
 
 SELECT COUNT(vote.vote_id), SUM(vote.value), COUNT(IF(review.status_id=1, vote.vote_id, NULL)), SUM(IF(review.status_id=1, vote.value, 0)) INTO @VC, @VS, @VCA, @VSA FROM `m2rating_option_vote` AS `vote`  INNER JOIN `m2review` AS `review` ON vote.review_id=review.review_id  LEFT JOIN `m2review_store` AS `store` ON vote.review_id=store.review_id  INNER JOIN `m2rating_store` AS `rstore` ON vote.rating_id=rstore.rating_id AND rstore.store_id=store.store_id WHERE (vote.rating_id = @RATE_N) AND (store.store_id=@STORE_ID) AND (vote.entity_pk_value = @PRODUCT_ID) GROUP BY `vote`.`rating_id`,   `vote`.`entity_pk_value`,   `store`.`store_id`;
 
-UPDATE `m2rating_option_vote_aggregated` SET `rating_id` = @RATE_N, `entity_pk_value` = @PRODUCT_ID, `vote_count` = @VC, `vote_value_sum` = @VS, `percent` = @VS*20/@VC, `percent_approved` = @VSA*20/@VCA, `store_id` = @STORE_ID WHERE (primary_id = '@PRIMARY_ID');
+UPDATE `m2rating_option_vote_aggregated` SET `rating_id` = @RATE_N, `entity_pk_value` = @PRODUCT_ID, `vote_count` = @VC, `vote_value_sum` = @VS, `percent` = @VS*20/@VC, `percent_approved` = @VSA*20/@VCA, `store_id` = @STORE_ID WHERE (primary_id = @PRIMARY_ID);
 
 SET @STORE_ID=2;
 
@@ -98,7 +98,7 @@ SELECT `m2rating_option_vote_aggregated`.`primary_id` INTO @PRIMARY_ID FROM `m2r
 
 SELECT COUNT(vote.vote_id), SUM(vote.value), COUNT(IF(review.status_id=1, vote.vote_id, NULL)), SUM(IF(review.status_id=1, vote.value, 0)) INTO @VC, @VS, @VCA, @VSA FROM `m2rating_option_vote` AS `vote`  INNER JOIN `m2review` AS `review` ON vote.review_id=review.review_id  LEFT JOIN `m2review_store` AS `store` ON vote.review_id=store.review_id  INNER JOIN `m2rating_store` AS `rstore` ON vote.rating_id=rstore.rating_id AND rstore.store_id=store.store_id WHERE (vote.rating_id = @RATE_N) AND (store.store_id=@STORE_ID) AND (vote.entity_pk_value = @PRODUCT_ID) GROUP BY `vote`.`rating_id`,   `vote`.`entity_pk_value`,   `store`.`store_id`;
 
-UPDATE `m2rating_option_vote_aggregated` SET `rating_id` = @RATE_N, `entity_pk_value` = @PRODUCT_ID, `vote_count` = @VC, `vote_value_sum` = @VS, `percent` = @VS*20/@VC, `percent_approved` = @VSA*20/@VCA, `store_id` = @STORE_ID WHERE (primary_id = '@PRIMARY_ID');
+UPDATE `m2rating_option_vote_aggregated` SET `rating_id` = @RATE_N, `entity_pk_value` = @PRODUCT_ID, `vote_count` = @VC, `vote_value_sum` = @VS, `percent` = @VS*20/@VC, `percent_approved` = @VSA*20/@VCA, `store_id` = @STORE_ID WHERE (primary_id = @PRIMARY_ID);
 
 
 
