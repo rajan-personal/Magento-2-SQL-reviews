@@ -30,6 +30,7 @@ INSERT INTO `m2review_store` (`store_id`, `review_id`) VALUES (0, @REVIEW_ID);
 
 INSERT INTO `m2rating_option_vote` (`option_id`, `review_id`, `percent`, `value`, `remote_ip`, `remote_ip_long`, `customer_id`, `entity_pk_value`, `rating_id`) VALUES (@REVIEW_RATING1, @REVIEW_ID, (@REVIEW_RATING1*20), @REVIEW_RATING1, '99.99.99.99', '9999', @CUSTOMER_ID, @PRODUCT_ID, 1);
 
+INSERT INTO `m2rating_option_vote` (`option_id`, `review_id`, `percent`, `value`, `remote_ip`, `remote_ip_long`, `customer_id`, `entity_pk_value`, `rating_id`) VALUES (5+@REVIEW_RATING2, @REVIEW_ID, (@REVIEW_RATING2*20), @REVIEW_RATING2, '99.99.99.99', '99.99.99.99', @CUSTOMER_ID, @PRODUCT_ID, 2);
 
 
 -- Aggregated rating
@@ -66,7 +67,6 @@ SELECT COUNT(vote.vote_id), SUM(vote.value), COUNT(IF(review.status_id=1, vote.v
 
 UPDATE `m2rating_option_vote_aggregated` SET `rating_id` = @RATE_N, `entity_pk_value` = @PRODUCT_ID, `vote_count` = @VC, `vote_value_sum` = @VS, `percent` = @VS*20/@VC, `percent_approved` = @VSA*20/@VCA, `store_id` = @STORE_ID WHERE (primary_id = '@PRIMARY_ID');
 
-INSERT INTO `m2rating_option_vote` (`option_id`, `review_id`, `percent`, `value`, `remote_ip`, `remote_ip_long`, `customer_id`, `entity_pk_value`, `rating_id`) VALUES (5+@REVIEW_RATING2, @REVIEW_ID, (@REVIEW_RATING2*20), @REVIEW_RATING2, '99.99.99.99', '99.99.99.99', @CUSTOMER_ID, @PRODUCT_ID, 2);
 
 SET @RATE_N=2;
 
