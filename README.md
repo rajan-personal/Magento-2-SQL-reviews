@@ -23,6 +23,8 @@ Aggregated rating stores average rating for each rating id and storeID.
 
 Summary stores the important average rating shown on PDP.
 
+FLUSH CACHE and reviews should be updated on website.
+
 If you are extending ratings, you will have to extend 31 and 33 lines (optionID)
 
 Hope this was useful
