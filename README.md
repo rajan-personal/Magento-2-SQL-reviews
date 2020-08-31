@@ -21,6 +21,8 @@ I am currently using 'm2' as prefix for database.
 
 Aggregated rating stores average rating for each rating id and storeID. 
 
+Summary stores the important average rating shown on PDP.
+
 If you are extending ratings, you will have to extend 31 and 33 lines (optionID)
 
 Hope this was useful
