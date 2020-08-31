@@ -2,6 +2,8 @@ post approved reviews Magento 2 SQL Query
 
 This creates a stored procedure (saved queries) for posting the reviews.
 
+query: call postReview ('product name', 30, 'review title', 'Review Detail', 5, 5, 'Rajan', '2020-12-12 00:00:00');
+
 reference https://blog.magepsycho.com/import-product-reviews-in-magento-via-sql/
 
 General structure is:
