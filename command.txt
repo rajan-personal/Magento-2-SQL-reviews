@@ -1,1 +1,0 @@
-call postReview ('product name', 30, 'review title', 'Review Detail', 5, 5, 'Rajan', '2020-12-12 00:00:00');
